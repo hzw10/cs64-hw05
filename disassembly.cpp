@@ -54,7 +54,7 @@ string disassemble(string hex) {
     // YOUR CODE GOES HERE!!
     unsigned int dec = stoul(hex, nullptr, 16);
     int immediate = stoi(hex.substr(4), nullptr, 16) << 16 >> 16;
-    string instruction = getOperation(dec >> 26) + " " + getRegister((dec << 11) >> 27) + " " + getRegister((dec << 6) >> 27) + " " + to_string(immediate);
+    string instruction = getOperation(dec >> 26) + " " + getRegister((dec << 11) >> 27) + ", " + getRegister((dec << 6) >> 27) + ", " + to_string(immediate);
     return instruction;
 }
 
